@@ -1,0 +1,1208 @@
+/* =========================
+   NEON//FORUM
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #07080d;
+    --bg-soft: #0d1018;
+    --panel: rgba(17, 20, 31, 0.78);
+
+    --text: #f4f4f7;
+    --text-soft: #a8adbd;
+
+    --pink: #ff3cac;
+    --purple: #8b5cf6;
+    --blue: #38bdf8;
+
+    --border: rgba(255, 255, 255, 0.10);
+
+    --shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45);
+
+    --glow:
+        0 0 30px rgba(255, 60, 172, 0.15);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(139, 92, 246, 0.14),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(56, 189, 248, 0.10),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(255, 60, 172, 0.08),
+            transparent 40%
+        ),
+        var(--bg);
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   MENU
+   ========================= */
+
+nav {
+    width: min(1150px, 92%);
+    margin: 24px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    padding: 15px 22px;
+
+    background: rgba(15, 17, 26, 0.75);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+nav a {
+    color: var(--text-soft);
+    text-decoration: none;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+
+    transition: 0.25s ease;
+}
+
+nav a:hover {
+    color: white;
+
+    text-shadow:
+        0 0 12px rgba(255, 60, 172, 0.7);
+}
+
+
+/* =========================
+   INDEX - BIENVENIDA
+   ========================= */
+
+.bienv {
+    width: min(1000px, 88%);
+    margin: 110px auto 50px;
+}
+
+.bienv::before {
+    content: "ONLINE // COMMUNITY";
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: var(--pink);
+
+    font-family: monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.25em;
+}
+
+.bienv h1 {
+    max-width: 850px;
+
+    margin-bottom: 28px;
+
+    font-size: clamp(3rem, 8vw, 6.8rem);
+    line-height: 0.92;
+    letter-spacing: -0.065em;
+
+    font-weight: 800;
+}
+
+.bienv h1::after {
+    content: "_";
+    color: var(--pink);
+
+    animation: blink 1s steps(2) infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.bienv p {
+    max-width: 750px;
+
+    color: var(--text-soft);
+
+    font-size: 1.07rem;
+    line-height: 1.85;
+
+    white-space: pre-line;
+}
+
+
+/* =========================
+   CTA
+   ========================= */
+
+.cta {
+    position: relative;
+
+    width: min(1000px, 88%);
+    margin: 65px auto 120px;
+
+    padding: 38px 40px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 60, 172, 0.08),
+            rgba(139, 92, 246, 0.07),
+            rgba(56, 189, 248, 0.04)
+        );
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow:
+        var(--shadow),
+        var(--glow);
+
+    backdrop-filter: blur(16px);
+}
+
+.cta::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--pink),
+            var(--purple),
+            var(--blue),
+            transparent
+        );
+}
+
+.cta p {
+    max-width: 700px;
+
+    color: var(--text-soft);
+
+    font-size: 1rem;
+}
+
+.b1 {
+    display: inline-block;
+
+    margin-top: 25px;
+    padding: 13px 22px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-family: monospace;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink),
+            var(--purple)
+        );
+
+    border: 0;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 30px rgba(255, 60, 172, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.b1:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 40px rgba(255, 60, 172, 0.38);
+}
+
+
+/* =========================
+   REGISTRO
+   ========================= */
+
+.regis {
+    position: relative;
+
+    width: min(520px, 90%);
+    margin: 90px auto;
+
+    padding: 45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 21, 32, 0.92),
+            rgba(10, 12, 20, 0.92)
+        );
+
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    box-shadow:
+        var(--shadow),
+        0 0 80px rgba(139, 92, 246, 0.08);
+
+    backdrop-filter: blur(20px);
+}
+
+.regis::before {
+    content: "NEW_USER.EXE";
+
+    display: block;
+    margin-bottom: 15px;
+
+    color: var(--pink);
+
+    font-family: monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+}
+
+.regis h1 {
+    margin-bottom: 35px;
+
+    font-size: 2.4rem;
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+}
+
+.regis form {
+    display: flex;
+    flex-direction: column;
+}
+
+.regis label {
+    margin-bottom: 8px;
+
+    color: #dadce5;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.regis input[type="text"],
+.regis input[type="email"],
+.regis input[type="password"] {
+    width: 100%;
+
+    margin-bottom: 22px;
+    padding: 14px 15px;
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 0.95rem;
+
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.regis input::placeholder {
+    color: #676b7b;
+}
+
+.regis input[type="text"]:focus,
+.regis input[type="email"]:focus,
+.regis input[type="password"]:focus {
+    background: rgba(255, 255, 255, 0.055);
+
+    border-color: var(--pink);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 60, 172, 0.08),
+        0 0 25px rgba(255, 60, 172, 0.08);
+}
+
+.regis input[type="submit"] {
+    margin-top: 8px;
+    padding: 14px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink),
+            var(--purple)
+        );
+
+    border: none;
+    border-radius: 9px;
+
+    font-weight: 700;
+    font-size: 0.95rem;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.regis input[type="submit"]:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 35px rgba(255, 60, 172, 0.28);
+}
+
+
+/* =========================
+   MENSAJES
+   ========================= */
+
+.alert {
+    width: min(520px, 90%);
+    margin: 30px auto;
+
+    padding: 14px 18px;
+
+    color: #ff9dd4;
+
+    background: rgba(255, 60, 172, 0.07);
+
+    border: 1px solid rgba(255, 60, 172, 0.25);
+    border-radius: 10px;
+
+    font-family: monospace;
+    font-size: 0.88rem;
+}
+
+
+/* =========================
+   FUTURA TABLA DEL FORO
+   ========================= */
+
+.tabla {
+    width: min(1000px, 88%);
+    margin: 60px auto 120px;
+
+    min-height: 250px;
+
+    background: rgba(15, 18, 27, 0.75);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
+
+    backdrop-filter: blur(16px);
+}
+
+
+/* =========================
+   SELECCIÓN
+   ========================= */
+
+::selection {
+    background: var(--pink);
+    color: white;
+}
+
+
+/* =========================
+   SCROLLBAR
+   ========================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            var(--pink),
+            var(--purple)
+        );
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 700px) {
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        padding: 15px;
+    }
+
+    .bienv {
+        margin-top: 70px;
+    }
+
+    .bienv h1 {
+        font-size: clamp(3rem, 14vw, 5rem);
+    }
+
+    .cta {
+        padding: 28px;
+    }
+
+    .regis {
+        margin-top: 50px;
+        padding: 30px 25px;
+    }
+
+    .regis h1 {
+        font-size: 2rem;
+    }
+}
+/* =========================
+   LOGIN
+   ========================= */
+
+.login {
+    position: relative;
+    width: min(520px, 90%);
+    margin: 90px auto;
+    padding: 45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 21, 32, 0.92),
+            rgba(10, 12, 20, 0.92)
+        );
+
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    box-shadow:
+        var(--shadow),
+        0 0 80px rgba(56, 189, 248, 0.08);
+
+    backdrop-filter: blur(20px);
+}
+
+.login::before {
+    content: "USER_LOGIN.EXE";
+    display: block;
+    margin-bottom: 15px;
+
+    color: var(--blue);
+
+    font-family: monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+}
+
+.login h1 {
+    margin-bottom: 35px;
+
+    font-size: 2.4rem;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login label {
+    margin-bottom: 8px;
+
+    color: #dadce5;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.login input[type="email"],
+.login input[type="password"],
+.login input[type="text"] {
+    width: 100%;
+
+    margin-bottom: 22px;
+    padding: 14px 15px;
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 0.95rem;
+
+    transition: 0.2s ease;
+}
+
+.login input::placeholder {
+    color: #676b7b;
+}
+
+.login input[type="email"]:focus,
+.login input[type="password"]:focus,
+.login input[type="text"]:focus {
+    background: rgba(255, 255, 255, 0.055);
+
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 0 3px rgba(56, 189, 248, 0.08),
+        0 0 25px rgba(56, 189, 248, 0.10);
+}
+
+.regis input[type="submit"],
+.login input[type="submit"] {
+    margin-top: 8px;
+    padding: 14px;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        var(--pink),
+        var(--purple)
+    );
+
+    border: none;
+    border-radius: 9px;
+
+    font-weight: 700;
+    font-size: 0.95rem;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.regis input[type="submit"]:hover,
+.login input[type="submit"]:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 35px rgba(255, 60, 172, 0.28);
+}
+
+
+.registro-link {
+    margin-top: 25px;
+
+    color: var(--text-soft);
+
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.registro-link a {
+    color: var(--pink);
+
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.registro-link a:hover {
+    color: white;
+
+    text-shadow:
+        0 0 12px rgba(255, 60, 172, 0.7);
+}
+
+
+/* =========================
+   RESPONSIVE LOGIN
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .login {
+        margin-top: 50px;
+        padding: 30px 25px;
+    }
+
+    .login h1 {
+        font-size: 2rem;
+    }
+}
+/* =========================
+   FORO
+   ========================= */
+
+.foro {
+    width: min(1000px, 88%);
+    margin: 80px auto 120px;
+}
+
+.foro::before {
+    content: "DISCUSSION_INDEX";
+    display: block;
+    margin-bottom: 15px;
+
+    color: var(--pink);
+
+    font-family: monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+}
+
+.foro h1 {
+    margin-bottom: 40px;
+
+    font-size: clamp(2.6rem, 6vw, 4.8rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+
+/* =========================
+   TEMA
+   ========================= */
+
+.tema {
+    position: relative;
+
+    margin-bottom: 18px;
+    padding: 24px 26px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.015)
+        );
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.tema:hover {
+    transform: translateY(-3px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 60, 172, 0.06),
+            rgba(139, 92, 246, 0.035)
+        );
+
+    border-color: rgba(255, 60, 172, 0.35);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.30),
+        0 0 30px rgba(255, 60, 172, 0.07);
+}
+
+
+/* sección */
+
+.tema .seccion {
+    margin-bottom: 7px;
+
+    color: var(--blue);
+
+    font-family: monospace;
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+
+/* título */
+
+.tema h2 {
+    margin-bottom: 10px;
+
+    font-size: 1.35rem;
+    line-height: 1.3;
+}
+
+.tema h2 a {
+    color: var(--text);
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        text-shadow 0.2s ease;
+}
+
+.tema h2 a:hover {
+    color: var(--pink);
+
+    text-shadow:
+        0 0 18px rgba(255, 60, 172, 0.25);
+}
+
+
+/* número de mensajes */
+
+.tema > p:last-child {
+    color: var(--text-soft);
+
+    font-size: 0.82rem;
+    font-family: monospace;
+}
+
+
+/* línea decorativa */
+
+.tema::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 20%;
+    bottom: 20%;
+
+    width: 2px;
+
+    background:
+        linear-gradient(
+            var(--pink),
+            var(--purple),
+            var(--blue)
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.2s ease;
+}
+
+.tema:hover::after {
+    opacity: 1;
+}
+
+
+/* =========================
+   RESPONSIVE FORO
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .foro {
+        margin-top: 55px;
+    }
+
+    .foro h1 {
+        margin-bottom: 30px;
+    }
+
+    .tema {
+        padding: 20px;
+    }
+
+    .tema h2 {
+        font-size: 1.15rem;
+    }
+}
+
+/* =========================
+   PÁGINA DE TEMA
+   ========================= */
+
+.pagina-tema {
+    width: min(1000px, 88%);
+    margin: 70px auto 120px;
+}
+
+.pagina-tema > .seccion {
+    margin-bottom: 12px;
+
+    color: var(--blue);
+
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+.pagina-tema > h1 {
+    margin-bottom: 45px;
+
+    font-size: clamp(2.5rem, 6vw, 4.8rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+
+/* =========================
+   LISTA DE MENSAJES
+   ========================= */
+
+.mensajes {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    margin-bottom: 55px;
+}
+
+.mensaje {
+    position: relative;
+
+    padding: 24px 26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 21, 32, 0.92),
+            rgba(10, 12, 20, 0.92)
+        );
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.mensaje:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(139, 92, 246, 0.35);
+
+    box-shadow:
+        0 14px 40px rgba(0, 0, 0, 0.28),
+        0 0 30px rgba(139, 92, 246, 0.06);
+}
+
+.mensaje::before {
+    content: "";
+
+    position: absolute;
+    top: 18px;
+    bottom: 18px;
+    left: 0;
+
+    width: 2px;
+
+    background:
+        linear-gradient(
+            var(--pink),
+            var(--purple),
+            var(--blue)
+        );
+
+    border-radius: 10px;
+}
+
+.mensaje .autor {
+    margin-bottom: 10px;
+
+    color: var(--pink);
+
+    font-family: monospace;
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+}
+
+.mensaje p:not(.autor) {
+    color: var(--text-soft);
+
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+
+/* =========================
+   RESPONDER
+   ========================= */
+
+.respuesta {
+    position: relative;
+
+    padding: 32px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 60, 172, 0.06),
+            rgba(139, 92, 246, 0.05),
+            rgba(56, 189, 248, 0.03)
+        );
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    box-shadow:
+        var(--shadow),
+        0 0 60px rgba(255, 60, 172, 0.05);
+
+    overflow: hidden;
+}
+
+.respuesta::before {
+    content: "REPLY_MODE";
+
+    display: block;
+    margin-bottom: 10px;
+
+    color: var(--pink);
+
+    font-family: monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+}
+
+.respuesta h2 {
+    margin-bottom: 24px;
+
+    font-size: 1.8rem;
+    letter-spacing: -0.03em;
+}
+
+.respuesta form {
+    display: flex;
+    flex-direction: column;
+}
+
+.respuesta textarea {
+    width: 100%;
+    min-height: 150px;
+
+    padding: 16px;
+
+    resize: vertical;
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: 10px;
+
+    outline: none;
+
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.6;
+
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.respuesta textarea::placeholder {
+    color: #676b7b;
+}
+
+.respuesta textarea:focus {
+    background: rgba(255, 255, 255, 0.05);
+
+    border-color: var(--pink);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 60, 172, 0.08),
+        0 0 25px rgba(255, 60, 172, 0.08);
+}
+
+.respuesta input[type="submit"] {
+    align-self: flex-start;
+
+    margin-top: 18px;
+    padding: 13px 22px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink),
+            var(--purple)
+        );
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.respuesta input[type="submit"]:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 35px rgba(255, 60, 172, 0.28);
+}
+
+
+/* =========================
+   RESPONSIVE TEMA
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .pagina-tema {
+        margin-top: 50px;
+    }
+
+    .pagina-tema > h1 {
+        margin-bottom: 30px;
+    }
+
+    .mensaje {
+        padding: 20px;
+    }
+
+    .respuesta {
+        padding: 24px 20px;
+    }
+
+    .respuesta input[type="submit"] {
+        width: 100%;
+    }
+}
+
+/* =========================
+   BOTÓN BORRAR MENSAJE
+   ========================= */
+
+.borrar-mensaje {
+    margin-top: 18px;
+}
+
+.borrar-mensaje button {
+    padding: 8px 14px;
+
+    color: #ff8ab8;
+    background: rgba(255, 60, 120, 0.05);
+
+    border: 1px solid rgba(255, 60, 120, 0.25);
+    border-radius: 8px;
+
+    font-family: monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.borrar-mensaje button:hover {
+    color: white;
+
+    background: rgba(255, 60, 120, 0.16);
+
+    border-color: var(--pink);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 0 22px rgba(255, 60, 172, 0.15);
+}
