@@ -69,7 +69,11 @@ if ($_POST) {
 
     <div class="login">
 
+        <div class="auth-heading">
+        <p class="eyebrow">01 / ACCESO</p>
         <h1>Inicia sesión</h1>
+        <p>Tu próxima conversación empieza aquí.</p>
+    </div>
 
         <form action="login.php" method="POST">
 

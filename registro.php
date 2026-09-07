@@ -64,7 +64,11 @@ if ($_POST) {
 ?>
 
 <div class="regis">
-    <h1>Crea tu usuario</h1>
+    <div class="auth-heading">
+        <p class="eyebrow">02 / NUEVA IDENTIDAD</p>
+        <h1>Crea tu usuario</h1>
+        <p>Un alias. Muchas cosas que compartir.</p>
+    </div>
 
     <form action="registro.php" method="POST">
 

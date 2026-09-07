@@ -60,7 +60,8 @@ if (isset($_SESSION["usuario"])) {
 
 <div class="foro">
 
-    <h1>Temas del foro</h1>
+    <p class="eyebrow">NEON//FORUM · Índice de conversaciones</p>
+    <h1>Temas del foro<span class="title-dot" aria-hidden="true">.</span></h1>
 
 
     <?php
@@ -93,8 +94,8 @@ if (isset($_SESSION["usuario"])) {
 
             <p>
 
-                Mensajes:
-                <?php echo $tema["num_msj"]; ?>
+                <span class="count-label">Mensajes</span>
+                <strong class="message-count"><?php echo $tema["num_msj"]; ?></strong>
 
             </p>
 

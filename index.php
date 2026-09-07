@@ -31,7 +31,8 @@ session_start();
     ?>
 
     <div class="bienv">
-        <h1>Bienvenid@ a NEON//FORUM</h1>
+        <p class="eyebrow">Cultura digital · Conversaciones humanas</p>
+        <h1><span class="welcome">Bienvenid@ a</span> NEON<span class="slashes">//</span><span class="word-forum">FORUM</span></h1>
 
         <p>
             Un rincón para hablar de videojuegos, inteligencia artificial,

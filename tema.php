@@ -168,19 +168,23 @@ if (isset($_SESSION["usuario"])) {
             $id_usu = $mensaje["id_usu"];
 
 
-            /* BUSCAMOS EL NOMBRE DEL AUTOR */
+            /* BUSCAMOS EL NOMBRE, AVATAR Y FIRMA DEL AUTOR */
 
-            $sql = "SELECT nickname
+            $sql = "SELECT nickname, avatar, firma
                     FROM usuarios
                     WHERE id_usu = $id_usu";
 
             $resultadoUsuario = $con->query($sql);
 
             $nickname = "Usuario";
+            $avatar = "";
+            $firma = "";
 
             foreach ($resultadoUsuario as $usuario) {
 
                 $nickname = $usuario["nickname"];
+                $avatar = $usuario["avatar"];
+                $firma = $usuario["firma"];
 
             }
 
@@ -190,14 +194,31 @@ if (isset($_SESSION["usuario"])) {
             <div class="mensaje">
 
 
-                <p class="autor">
+                <div class="autor">
 
-                    <?php echo $nickname; ?>
+                    <?php if ($avatar != NULL && $avatar != "") { ?>
 
-                </p>
+                        <img
+                            src="avatars/<?php echo htmlspecialchars($avatar, ENT_QUOTES, "UTF-8"); ?>"
+                            alt=""
+                            class="avatar-img"
+                            width="64"
+                            height="64"
+                            loading="lazy"
+                        >
+
+                    <?php } else { ?>
+
+                        <div class="avatar-vacio" aria-hidden="true"><?php echo htmlspecialchars(strtoupper(substr($nickname, 0, 1)), ENT_QUOTES, "UTF-8"); ?></div>
+
+                    <?php } ?>
+
+                    <p class="autor-nombre"><?php echo htmlspecialchars($nickname, ENT_QUOTES, "UTF-8"); ?></p>
+
+                </div>
 
 
-                <p>
+                <p class="mensaje-texto">
 
                     <?php echo $mensaje["mensaje"]; ?>
 
@@ -245,6 +266,11 @@ if (isset($_SESSION["usuario"])) {
 
                 ?>
 
+                <?php if ($firma != NULL && trim($firma) != "") { ?>
+
+                    <p class="firma"><?php echo htmlspecialchars($firma, ENT_QUOTES, "UTF-8"); ?></p>
+
+                <?php } ?>
 
             </div>
 
@@ -275,7 +301,9 @@ if (isset($_SESSION["usuario"])) {
                 method="POST"
             >
 
+                <label for="respuesta-mensaje">Tu mensaje</label>
                 <textarea
+                    id="respuesta-mensaje"
                     name="mensaje"
                     placeholder="Escribe tu respuesta..."
                     required
