@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-09-2026 a las 21:18:55
+-- Tiempo de generación: 08-09-2026 a las 07:53:31
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -206,7 +206,7 @@ INSERT INTO `usuarios` (`id_usu`, `nickname`, `email`, `password`, `avatar`, `fi
 (1, 'ChunChun', 'xulia@mail.com', '$2y$10$bZrddLzYLxKwMd8LaW9a8.x98YZjn7LMNNSx8yryo3X4GEEIJF/7q', 'avatar_1_1788807336.png', '(*^▽^*)/ Retro, IA, arte digital y cacharreo // arreglando Game Boys y montando interfaces raritas.'),
 (2, 'Caesar', 'cesar@mail.com', '$2y$10$ZMxOwcMb1Uh..6ThlPIBUOQM50oa1kAHWujDkqMvkwuTOQaovr2RK', 'avatar_2_1788807629.jpg', 'La tecnología también es cultura. Ex-programador, amante de los museos y de observar el mundo con calma.'),
 (3, 'Marci', 'marcia@mail.com', '$2y$10$F05ln3gew3ZUzDDlHENwSO/HDwzc3jc2npEnoQDqHOTD33JlcTUw6', 'avatar_3_1788807859.webp', 'Metal, raves y código. Si hace calor probablemente estaré de peor humor.'),
-(4, 'Luiiiis', 'luis@mail.com', '$2y$10$HWiAK6Wy2s9G0uBQgnpMlO8e.G/v2kG0clXI5hbX1IudrOh6LnDZS', 'avatar_4_1788807943.webp', 'Código, música y café. Padre de David. A veces moderno, a veces señor de otra época.'),
+(4, 'Luiiiis', 'luis@mail.com', '$2y$10$HWiAK6Wy2s9G0uBQgnpMlO8e.G/v2kG0clXI5hbX1IudrOh6LnDZS', 'avatar_4_1788807943.webp', 'Código, música y café. Padre de David. Profesor por costumbre, programador por deformación profesional.'),
 (5, 'pablito69', 'pablo@mail.com', '$2y$10$aU6HYFkrACk2HuTyPkWp7uahiO0NmGg7MDW7QQe2d5hdCCrN7vjk2', 'avatar_5_1788807705.jpg', 'Si funciona, perfecto. Si no funciona, primero se vacila y luego se depura xD'),
 (6, 'Floriii', 'flora@mail.com', '$2y$10$5elBtYZ1ziuRYOwMtbzOtOKyDY1.lR5qIL.j3RP8Lk4vSdjTcKOrW', 'avatar_6_1788808073.jpg', 'Aprendiendo poco a poco :) Ex farmacéutica, nueva en programación pero con muchas ganas.'),
 (7, 'Steph', 'steph@mail.com', '$2y$10$Xj0qt0jhESm2TQbPUwK4n.xhvhQb5/0c6a16e4LlOGix9RioIB1ya', 'avatar_7_1788808180.png', 'Frontend first. Marketing, desarrollo y criterio visual para construir cosas con sentido.'),
