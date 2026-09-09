@@ -6,7 +6,7 @@ if (!isset($_SESSION["usuario"])) {
     exit;
 }
 
-$con = new mysqli("localhost", "root", "", "examen");
+$con = new mysqli("");
 $nicknameSesion = $_SESSION["usuario"];
 
 /* DATOS DEL USUARIO */
@@ -87,6 +87,7 @@ $actividad = $con->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
     <title>Perfil de <?php echo $nickname; ?></title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body>

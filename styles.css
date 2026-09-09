@@ -378,6 +378,86 @@ textarea { min-height: 160px; line-height: 1.7; resize: vertical; }
     border: 1px solid var(--line);
     background: var(--panel);
 }
+.foro .tema .tema-datos {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-size: .85rem;
+}
+.foro .tema .tema-datos .message-count {
+    font-size: 1rem;
+    line-height: 1;
+}
+.foro .tema .tema-datos .count-label {
+    font-size: .75rem;
+}
+
+.editor-botones {
+    display: flex;
+    margin: 0 0 16px;
+}
+.editor-botones button {
+    width: auto;
+    margin: 0 8px 0 0;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--paper);
+    font-size: 1.1rem;
+}
+.respuesta .editor-botones,
+.regis .editor-botones {
+    display: flex;
+    margin: 8px 0 16px;
+}
+.respuesta .editor-botones button,
+.regis .editor-botones button {
+    width: 44px;
+    height: 44px;
+    margin: 0 6px 0 0;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 0;
+    background: var(--panel);
+    color: var(--paper);
+    font-size: 1.35rem;
+    line-height: 1;
+    cursor: pointer;
+}
+.respuesta .editor-botones button:hover,
+.regis .editor-botones button:hover {
+    border-color: var(--pink);
+    background: var(--pink);
+}
+.respuesta .editor-botones button:focus-visible,
+.regis .editor-botones button:focus-visible {
+    outline: 2px solid var(--pink);
+    outline-offset: 2px;
+}
+.respuesta .editor-botones,
+.regis .editor-botones {
+    justify-content: flex-end;
+}
+.respuesta h2 {
+    margin: 0 0 20px;
+}
+.respuesta .editor-cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0 0 12px;
+}
+.respuesta .editor-cabecera label {
+    margin: 0;
+}
+.respuesta .editor-cabecera .editor-botones {
+    margin: 0 0 0 auto;
+}
+.respuesta .editor-cabecera .editor-botones button:last-child {
+    margin-right: 0;
+}
 .avatar-img, .avatar-vacio { width: 120px; height: 120px; border: 1px solid var(--line); object-fit: cover; }
 .avatar-vacio { display: grid; place-items: center; background: var(--purple); color: var(--ink); font-size: 4rem; font-weight: 600; }
 .avatar-form { display: flex; flex-direction: column; gap: 12px; width: 100%; min-width: 0; }

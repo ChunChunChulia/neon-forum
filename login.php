@@ -11,7 +11,7 @@ if ($_POST) {
     $email = $_POST["email"];
     $pass = $_POST["pass"];
 
-    $con = new mysqli("localhost", "root", "", "examen");
+    $con = new mysqli("");
 
     $sql = "SELECT email, nickname, password FROM usuarios";
     $resultado = $con->query($sql);
@@ -53,6 +53,7 @@ if ($_POST) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Login</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body>

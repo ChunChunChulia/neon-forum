@@ -9,12 +9,14 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.js"
         integrity="sha512-jx7pKV1OCCwD8nJVKETycdimr+xPg3VCP0Wc5tX0RdpusPKEC72eB5cyqgT48K5HxbXvbxIc/oDVb70QMhSeLw=="
         crossorigin="anonymous"
         referrerpolicy="no-referrer">
+        
     </script>
 
     <title>Foro</title>
